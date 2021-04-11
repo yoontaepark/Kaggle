@@ -26,3 +26,20 @@ ndarray의 shape는 axis0, axis1, axis2와 같이 axis 단위로 부여되고,
 axis0 == 행, axis1 == 열 인 것 뿐이다. 
 
 - 실습
+[1] import numpy as np  #넘파이를 np로 호출(이후 np.~~ 로 넘파이 기능 호출)
+
+[2] list1 = [1,2,3]    #리스트를 넘파이 array에 넣으면, 실제로 넘파이 array 타입으로 변환됨
+print("list1:", list1)
+print("list1 type", type(list1))
+
+array1 = np.array(list1)
+print("array1:", array1)
+print("array1 type", type(array1))
+
+[2-결과]
+list1: [1, 2, 3]
+list1 type <class 'list'>
+array1: [1 2 3]
+array1 type <class 'numpy.ndarray'>
+
+
