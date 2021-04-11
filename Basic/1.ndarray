@@ -5,8 +5,8 @@
 import numpy as np : 넘파이 라이브러리 호출, np는 코드짤때 쉬우라고 약어로
 np.array(변수) : 넘파이 타입으로 변환
 type(변수): 해당 변수의 타입 확인 
-변수.shape: 해당 변수의 형태(보통 n차원 확인용도)
-
+변수.shape: 해당 변수의 형태((x,y,z,...)꼴로 나타남)
+변수.ndim: 해당 변수의 차원, 정수꼴로 나타남 
 
 
 - ndarray: n차원 배열 객체
@@ -36,9 +36,11 @@ ndarray의 shape는 axis0, axis1, axis2와 같이 axis 단위로 부여되고,
 axis0 == 행, axis1 == 열 인 것 뿐이다. 
 
 - 실습
-[1] import numpy as np  #넘파이를 np로 호출(이후 np.~~ 로 넘파이 기능 호출)
+[1] 
+import numpy as np  #넘파이를 np로 호출(이후 np.~~ 로 넘파이 기능 호출)
 
-[2] list1 = [1,2,3]    #리스트를 넘파이 array에 넣으면, 실제로 넘파이 array 타입으로 변환됨
+[2] 
+list1 = [1,2,3]    #리스트를 넘파이 array에 넣으면, 실제로 넘파이 array 타입으로 변환됨
 print("list1:", list1)
 print("list1 type", type(list1))
 
@@ -52,7 +54,9 @@ list1 type <class 'list'>
 array1: [1 2 3]
 array1 type <class 'numpy.ndarray'>
 
-[3] array1 = np.array([1,2,3])      #shape을 통해 (x,y)를 확인할 수 있다. 1차원은 (x,) 형태로 표현되는 것에 유의할 것 
+
+[3] 
+array1 = np.array([1,2,3])      #shape을 통해 (x,y)를 확인할 수 있다. 1차원은 (x,) 형태로 표현되는 것에 유의할 것 
 print("array1 type:", type(array1))
 print("array1 array 형태:", array1.shape)
 
@@ -64,7 +68,6 @@ array3 = np.array([[1,2,3]])            #이 경우에도 [[ ]] 이므로 2차�
 print("array3 type:", type(array3))
 print("array3 array 형태:", array3.shape)
 
-
 [3-결과]
 array1 type: <class 'numpy.ndarray'>
 array1 array 형태: (3,)
@@ -72,4 +75,10 @@ array2 type: <class 'numpy.ndarray'>
 array2 array 형태: (2, 3)
 array3 type: <class 'numpy.ndarray'>
 array3 array 형태: (1, 3)
+
+[4] 
+print("array1: {:0}차원, array2: {:1}차원, array3: {:2}차원".format(array1.ndim, array2.ndim, array3.ndim))   #{:0} 쓰고 .format(변수1) 이런식으로 표기가능
+
+[4-결과]
+array1: 1차원, array2: 2차원, array3:  2차원
 
