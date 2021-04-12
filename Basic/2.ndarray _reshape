@@ -1,0 +1,4 @@
+#2. 넘파이 배열 ndarray 초기화 방법과 ndarray 차원과 크기를 변경하는 reshape()의 이해
+
+- 초기화
+arrange(), zeros(), ones()를 이용해 초기화
