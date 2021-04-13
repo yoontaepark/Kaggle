@@ -105,3 +105,34 @@ array3:
  [8 9]]
 
 
+[6] //-1의 쓰임, 1차원 배열을 2차원으로, 혹은 2차원을 1차원으로 변환시 사용
+
+array1 = np.arange(5)
+//2차원으로 변환
+array2d_1 = array1.reshape(-1,1)
+print('array2d_1 shape:', array2d_1.shape)
+print('array2d_1:\n', array2d_1)
+
+//1차원으로 변환
+array1d = array1.reshape(-1,)
+print('array1d shape:', array1d.shape)
+print('array1d:\n', array1d)
+
+array2d_1 shape: (5, 1)
+array2d_1:
+ [[0]
+ [1]
+ [2]
+ [3]
+ [4]]
+array1d shape: (5,)
+array1d:
+ [0 1 2 3 4]
+ 
+ 
+ [7] /-1을 쓰더라도 변환불가한 형태면 에러남
+array1 = np.arange(10)
+array2 = array1.shape(-1,4)
+
+//반드시 -1값은 1개
+array1.reshape(-1,-1)
