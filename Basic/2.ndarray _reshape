@@ -17,3 +17,91 @@ array1.reshape(2,5) = [[0 1 2 3 4] [5 6 7 8 9]]
 array1d = [0 1 2 3 4]
 array1d.reshape(-1,1) = [[0] [1] [2] [3] [4]] 로 바뀜, 2차원이되 컬럼 axis크기가 1로 고정됨
 array1d.reshape(-1, ) = [0 1 2 3 4] 1차원으로 바뀜
+
+
+- 실습
+[1] //arange로 초기화한 배열을 출력하면, 1차원 정수형 배열이 나옴
+sequence_array = np.arange(10)
+print(sequence_array)
+print(sequence_array.dtype, sequence_array.shape)
+
+[1-r]
+[0 1 2 3 4 5 6 7 8 9]
+int32 (10,)
+
+
+[2]
+zero_array = np.zeros((3,2), dtype='int32')
+print(zero_array)
+print(zero_array.dtype, zero_array.shape)
+
+one_array = np.ones((3,2))
+print(one_array)
+print(one_array.dtype, one_array.shape)
+
+[2-r]
+[[0 0]
+ [0 0]
+ [0 0]]
+int32 (3, 2)
+[[1. 1.]
+ [1. 1.]
+ [1. 1.]]
+float64 (3, 2)
+
+
+[3]
+array1 = np.arange(10)
+print('array1:\n', array1)
+
+array2 = array1.reshape(2,5)
+print('array2:\n', array2)
+
+array3 = array1.reshape(5,2)
+print('array3:\n', array3)
+
+[3-r]
+array1:
+ [0 1 2 3 4 5 6 7 8 9]
+array2:
+ [[0 1 2 3 4]
+ [5 6 7 8 9]]
+array3:
+ [[0 1]
+ [2 3]
+ [4 5]
+ [6 7]
+ [8 9]]
+ 
+ 
+ [4] //변환할 수 없는 shape 구조를 입력하면 오류 발생
+ array1.reshape(4,3) 
+ 
+ 
+ [5] // -1은 그냥 나머지를 맞춰주는 변수 라고 생각하자
+array1 = np.arange(10)
+print(array1)
+
+array2 = array1.reshape(-1,5)
+print('array2 shape:', array2.shape)
+print('array2:\n', array2)
+
+array3 = array1.reshape(5,-1)
+print('array3 shape:', array3.shape)
+print('array3:\n', array3)
+
+[5-r]
+[0 1 2 3 4 5 6 7 8 9]
+array2 shape: (2, 5)
+array2:
+ [[0 1 2 3 4]
+ [5 6 7 8 9]]
+array3 shape: (5, 2)
+array3:
+ [[0 1]
+ [2 3]
+ [4 5]
+ [6 7]
+ [8 9]]
+
+
