@@ -1,4 +1,19 @@
 #2. 넘파이 배열 ndarray 초기화 방법과 ndarray 차원과 크기를 변경하는 reshape()의 이해
 
 - 초기화
-arrange(), zeros(), ones()를 이용해 초기화
+arange(), zeros(), ones()를 이용해 초기화
+np.arange(10) = [0 1 2 3 4 5 6 7 8 9]
+-> 가장 기본적인 초기화 형태임 
+
+np.zeros((3,2)) = [[0. 0.] [0. 0.] [0. 0.]]
+np.ones((3,2), dtype='int32') = [[1 1] [1 1] [1 1]]
+-> dtype을 넣으면 그 형태로 변환되고 기본적으로는 실수형으로 나옴 
+
+reshape()로 차원과 크기를 변경, -1 넣으면 그쪽 axis는 나머지를 채워달라라는 소리
+-> 보통 차원 변환이 꼭 필요한 경우 사용
+array1 = np.arange(10)
+array1.reshape(2,5) = [[0 1 2 3 4] [5 6 7 8 9]] 
+
+array1d = [0 1 2 3 4]
+array1d.reshape(-1,1) = [[0] [1] [2] [3] [4]] 로 바뀜, 2차원이되 컬럼 axis크기가 1로 고정됨
+array1d.reshape(-1, ) = [0 1 2 3 4] 1차원으로 바뀜
