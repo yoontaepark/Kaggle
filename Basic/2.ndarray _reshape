@@ -1,5 +1,16 @@
 #2. 넘파이 배열 ndarray 초기화 방법과 ndarray 차원과 크기를 변경하는 reshape()의 이해
 
+** 요약:
+아래의 함수들을 외울 것
+1) import numpy as np : 넘파이 라이브러리 호출, np는 코드짤때 쉬우라고 약어로
+2) np.arange(숫자) : 넘파이 타입의 배열을 0에서부터 (숫자-1) 까지 만들어준다. 
+3) np.zeros((x,y)): x by y 행렬로 0들이 만들어진다. 타입 안정하면 float임
+4) np.ones((x,y), dtype='원하는 타입') = x by y 행렬로 1들이 만들어진다, 이때 int32 같은 타입 넣으면 정수로 변함
+5) array1 = np.arange(10)
+   array1.reshape(2,5)  = 2 by 5 행렬로 차원과 크기가 변경됨(2차원의 2행 5열 형태로) 
+   array1.reshape(-1,1) = 10 by 1, 1차원이 아니라 2차원이되 컬럼 axis 크기가 1로 고정
+   array1.reshape(-1, ) = 10 by 1, 이거는 1차원이다. (2차원 입력값이 없다 == 차원으로 인식 x)
+
 - 초기화
 arange(), zeros(), ones()를 이용해 초기화
 np.arange(10) = [0 1 2 3 4 5 6 7 8 9]
