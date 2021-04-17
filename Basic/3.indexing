@@ -1,6 +1,8 @@
 # 3.indexing
 
-**암기
+** 요약:
+아래의 함수들을 외울 것
+1) import numpy as np : 넘파이 라이브러리 호출, np는 코드짤때 쉬우라고 약어로
 
 
 
@@ -34,4 +36,35 @@ ex) ndarray 내의 값이 5보다 큰 ndarray를 추출하고 싶다면? array1[
 
 
 - 실습
-[1] # 범위를 줘서 array 생성 후, 특정 위치 인덱싱하면 됨
+[1] # 범위를 줘서 array 생성 후, 특정 위치 인덱싱하면 됨, 대게 시작은 이상, 끝은 미만
+array1 = np.arange(start=1, stop=10)
+print('array1:', array1)
+
+value = array1[2]
+print('value:', value)
+print(type(value))
+
+[1]-A
+array1: [1 2 3 4 5 6 7 8 9]
+value: 3
+<class 'numpy.int32'>
+
+
+[2] # 인덱스에 -1을 넣었을 때, 인덱스 값 다른값으로 초기화하기 
+print['맨 뒤의 값:', array1[-1], '맨 뒤에서 두번째 값:', array1[-2])
+array1[0] = 9
+array1[8] = 0
+print('array1:', array1)
+
+[2]-A
+맨 뒤의 값: 9, 맨 뒤에서 두번째 값: 9
+array1: [9 2 3 4 5 6 7 8 0]
+
+
+[3] #2차원에서 인덱싱하는 법
+
+
+
+
+
+
