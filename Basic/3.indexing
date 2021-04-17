@@ -1,5 +1,10 @@
 # 3.indexing
 
+**암기
+
+
+
+
 - ndarray에서 데이터 세트 선택: 인덱싱(indexing)
 Slicing, Fancy Indexing, Boolean Indexing(중요!!)
 
@@ -28,3 +33,5 @@ Slicing, Fancy Indexing, Boolean Indexing(중요!!)
 ex) ndarray 내의 값이 5보다 큰 ndarray를 추출하고 싶다면? array1[array1>5] 이런식으로 쓰면 됨
 
 
+- 실습
+[1] # 범위를 줘서 array 생성 후, 특정 위치 인덱싱하면 됨
