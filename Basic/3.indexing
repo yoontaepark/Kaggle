@@ -115,7 +115,7 @@ array1d = np.arange(start=1, stop=10)
 array2d = array1d.reshape(3,3)
 print('array2d:\n', array2d)
 
-print(array2d[0:2, 0:2])
+print(array2d[0:2, 0:2]) #
 print(array2d[1:3, 0:3])
 print(array2d[1:3, :])
 print(array2d[:, :])
@@ -147,28 +147,84 @@ array2d:
 [1 4]
 
 
+[7] #팬시 인덱싱(fancy indexing), [위치1, 위치2] 이런식으로 원하는 위치만 인덱싱 할 수 있다. 변수.tolist()는 배열을 표현하는 또다른 방식
+array1d = np.arange(start=1, stop=10)
+array2d = array1d.reshape(3,3)
+print(array2d, '\n')
+
+array3 = array2d[[0,1],2]
+print(array3) # 걍 전체 리스트를 보고 싶을 때 
+print(array3.tolist(),'\n') #개별항목을 뽑을 때
+
+array4 = array2d[[0,2],0:2]
+print(array4) # 걍 전체 리스트를 보고 싶을 때 
+print(array4.tolist(),'\n') #개별항목을 뽑을 때
+
+array5 = array2d[[0,1]]
+print(array5) # 걍 전체 리스트를 보고 싶을 때 
+print(array5.tolist()) #개별항목을 뽑을 때
+
+[7]-A
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]] 
+
+[3 6]
+[3, 6] 
+
+[[1 2]
+ [7 8]]
+[[1, 2], [7, 8]] 
+
+[[1 2 3]
+ [4 5 6]]
+[[1, 2, 3], [4, 5, 6]]
 
 
+[8] #불린 인덱싱(boolean indexing), true=1 인 값들만 받아서 출력하는 기능
 
+array1d = np.arange(start=1, stop=10)
+print(array1d)
 
+print(array1d>5) #인덱싱 없이 넣으면 boolean 값이 나온다(true or false)
+var1 = array1d>5
+print('var1:', var1)
+print(type(var1))
 
+#[]안에 array1d>5 Boolean indexing을 적용
+print(array1d)
+array3 = array1d[array1d>5]
+print('array1d>5 boolean indexing result:', array3)
 
+boolean_indexes = np.array([False, False, False, False, False, True, True, True, True])
+array3 = array1d[boolean_indexes]
+print('Boolean indexing filtering result:', array3)
 
+indexes = np.array([5,6,7,8])
+array4 = array1d[indexes]
+print('일반 인덱스로 필터링 결과:', array4)
 
+#boolean 인덱싱 안쓴다면...
+array1d = np.arange(start=1, stop=10)
+target= [] #array 빈통 만들기
 
+for i in range(0,9): #i값을 0부터 9까지 (between(양쪽등호 모두 포함))
+    if array1d[i] > 5:
+        target.append(array1d[i]) #append로 array 채우기
+array_selected = np.array(target)
+print('boolean 인덱싱 안쓰고 if문으로 해결할 경우:', array_selected)       
 
+print(array1d[array1d>5]) #매우 자주쓰는 형태임, 꼭 암기하자
 
-
-
-
-
-
-
-
-
- 
-
-
-
-
+[8]-A
+[1 2 3 4 5 6 7 8 9]
+[False False False False False  True  True  True  True]
+var1: [False False False False False  True  True  True  True]
+<class 'numpy.ndarray'>
+[1 2 3 4 5 6 7 8 9]
+array1d>5 boolean indexing result: [6 7 8 9]
+Boolean indexing filtering result: [6 7 8 9]
+일반 인덱스로 필터링 결과: [6 7 8 9]
+boolean 인덱싱 안쓰고 if문으로 해결할 경우: [6 7 8 9]
+[6 7 8 9]
 
