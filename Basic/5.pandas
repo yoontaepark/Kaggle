@@ -2,15 +2,33 @@
 
 ** 요약
 아래의 함수들을 외울 것
-1) import numpy as np : 넘파이 라이브러리 호출, np는 코드짤때 쉬우라고 약어로
-2) np.sort(변수) : 오름차순으로 변수 array를 sort 한다.
+1) import pandas as pd : 판다스 라이브러리 호출
+2) pd.read_csv('파일명.확장자') : 꼭 확장자가 csv가 아니어도 된다
+3) 변수.head() : 가장 처음부터 5개의 데이터를 보여줌, (숫자) 넣으면 숫자만큼 보여줌
+4) pd.DataFrame(딕셔너리) : 데이터 프레임으로 변환
+   pd.DataFrame(딕셔너리, columns=['컬럼1', '컬럼2', '컬럼3',...]) : 컬럼명을 갈아끼우거나/추가가 가능
+   pd.DataFrame(딕셔너리, index = ['a', 'b', ... 'd']) : 인덱스를 새로운 값으로 할당(문자열도 됨) 
+   
+5) titanic_df.column : 어떤 컬럼이 있는지 보여줌
+   titanic_df.index : 인덱스 시작점, 끝점, 단위 등 보여줌
+   titanic_df.index.values : 인덱스 값을 출력
+   
+6) titanic_df['컬럼a'] : []연산자내에 한개 컬럼만 입력하면 series 객체를 반환
+   titanic_df['컬럼a', '컬럼b'] : 여러 컬럼을 입력하면 DataFrame으로 변환
+   titanic_df[['컬럼a']] : 한개의 컬럼이지만 리스트로 입력하면 DataFrame으로 반환
+   
+7) titanic_df.shape : (행, 열) 을 출력한다.
+8) titanic_df.info() : DF내에 컬럼명, 데이터 타입, null 건수, 데이터 건수 정보를 제공
+9) titanic_df.describe() : DF 데이터값들의 평균, 표준편차, 4분위 분포도를 제공, 숫자형 컬럼들에 대해 정보를 제공하며, NULL 값은 제외하고 계산
+10) titanic_df['Pclass'].value_counts() : 동일한 개별 데이터 값이 몇건인지 정보 제공(= 개별 데이터값의 분포도를 제공), SERIES 객체에서만 호출될 수 있다. 
+11) titanic_df.sort_values(by='컬럼a', ascending=False) : by=정렬 컬럼, 기본 오름차순(내림차순 = False) 으로 정렬, 다중소트는 by컬럼을 리스트로 만들어서 하기 
+
 
 
 -read_csv()
 read_csv()를 이용하여 csv 파일을 편리하게 DataFrame으로 로딩합니다.
 read_csv()의 sep 인자를 콤마(,)가 아닌 다른 분리자로 변경하여 다른 유형의 파일도 로드가 가능합니다.
 띄어쓰기 두번해야 줄넘어감
-
 
 -실습
 [1] #read_csv() 함수를 사용하여 DataFrame으로 로딩, 이때 파일 확장자가 .csv일 필요는 없다. 
