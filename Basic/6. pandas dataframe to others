@@ -1,0 +1,12 @@
+# 6. pandas dataframe to others
+
+** 요약
+아래의 함수들을 외울 것
+
+
+- DataFrame과 리스트, 딕셔너리, 넘파이 ndarray 상호 변환
+a) list -> DataFrame: df_list1 = pd.DataFrame(list, columns=col_name1)
+   DateFrame 생성 인자로 리스트 객체와 매핑되는 컬럼명들을 입력한다. 
+
+b) ndarray -> DataFrame: df_array2 = pd.DataFrame(array2, columns=col_name2)
+   
