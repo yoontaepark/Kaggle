@@ -37,4 +37,33 @@ f) DataFrame -> dict:
    ex) titanic_df.drop('Age_0', axis=1, inplace=True)
 
 
-   rd
+- Index: 
+a) 판다스의 index 객체는 RDBMS의 PK(Primary Key)와 유사하게 DataFrame, Series의 레코드를 고유하게 식별하는 개체임
+b) DataFrame, Series에서 index 객체만 추출하려면 DataFrame.index 또는 Series.index 속성을 통해 가능
+c) Series 객체는 index 객체를 포함하지만 Series 객체에 연산 함수를 적용할 때 index는 연산에서 제외됨. 
+   Index는 오직 식별용으로만 사용됨.
+d) DataFrame 및 Series에 reset_index() 메서드를 수행하면 새롭게 인덱스를 연속 숫자형으로 할당하며 기존 인덱스는 'index'라는 새로운 컬럼 명으로 추가됨
+
+
+- 실습
+[1] #리스트,ndarray에서 DataFrame 변환
+import numpy as np
+col_name = ['col1']
+list1 = [1,2,3]
+array1 = np.array(list1)
+
+print('array1 shape:', array1.shape) #당연히 1차원이 나옴
+
+
+
+
+
+
+
+
+
+
+
+   
+   
+   
