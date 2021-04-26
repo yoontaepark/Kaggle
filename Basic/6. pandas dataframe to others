@@ -37,4 +37,4 @@ f) DataFrame -> dict:
    ex) titanic_df.drop('Age_0', axis=1, inplace=True)
 
 
-   
+   rd
