@@ -48,19 +48,33 @@ d) DataFrame 및 Series에 reset_index() 메서드를 수행하면 새롭게 인
 - 실습
 [1] #리스트,ndarray에서 DataFrame 변환
 import numpy as np
-col_name = ['col1']
+import pandas as pd
+
+col_name1 = ['col1']
 list1 = [1,2,3]
 array1 = np.array(list1)
 
 print('array1 shape:', array1.shape) #당연히 1차원이 나옴
-df_list1 = pd.DataFrame(list1, colums=col_name1)
+df_list1 = pd.DataFrame(list1, columns=col_name1)
 print('1차원 리스트로 만든 DataFrame:\n', df_list1)
-df_array1 = pd.DataFrame(array1, colums=col_name1)
+df_array1 = pd.DataFrame(array1, columns=col_name1)
 print('1차원 ndarray로 만든 DataFrame"\n', df_array1)
 
 [1]-A
 array1 shape: (3,)
-1차원 리스트로 만든 DataFraeme:
+1차원 리스트로 만든 DataFrame:
+    col1
+0     1
+1     2
+2     3
+1차원 ndarray로 만든 DataFrame"
+    col1
+0     1
+1     2
+2     3
+
+
+[2]
 
 
 
