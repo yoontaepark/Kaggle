@@ -55,6 +55,13 @@ array1 = np.array(list1)
 print('array1 shape:', array1.shape) #당연히 1차원이 나옴
 df_list1 = pd.DataFrame(list1, colums=col_name1)
 print('1차원 리스트로 만든 DataFrame:\n', df_list1)
+df_array1 = pd.DataFrame(array1, colums=col_name1)
+print('1차원 ndarray로 만든 DataFrame"\n', df_array1)
+
+[1]-A
+array1 shape: (3,)
+1차원 리스트로 만든 DataFraeme:
+
 
 
 
