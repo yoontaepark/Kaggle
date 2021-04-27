@@ -53,6 +53,8 @@ list1 = [1,2,3]
 array1 = np.array(list1)
 
 print('array1 shape:', array1.shape) #당연히 1차원이 나옴
+df_list1 = pd.DataFrame(list1, colums=col_name1)
+print('1차원 리스트로 만든 DataFrame:\n', df_list1)
 
 
 
