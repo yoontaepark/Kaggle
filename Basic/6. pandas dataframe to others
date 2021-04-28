@@ -125,7 +125,23 @@ df_dict.values 타입: <class 'numpy.ndarray'> df_dict.values shape: (2, 3)
  [11 22 33]]
  
  
-[5]
+[5] #DataFrame을 리스트와 딕셔너리로 변환
+#DataFrame을 리스트로 변환
+list3 = df_dict.values.tolist()
+print('df_dict.values.tolist() 타입:', type(list3))
+print(list3)
+
+#DataFrame을 딕셔너리로 변환
+dict3 = df_dict.to_dict('list')
+print('\n df_dict.to_dict() 타입:', type(dict3))
+print(dict3)
+
+[5]-A
+df_dict.values.tolist() 타입: <class 'list'>
+[[1, 2, 3], [11, 22, 33]]
+
+ df_dict.to_dict() 타입: <class 'dict'>
+{'col1': [1, 11], 'col2': [2, 22], 'col3': [3, 33]}
  
 
 
