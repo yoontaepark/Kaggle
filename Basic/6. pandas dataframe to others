@@ -74,9 +74,46 @@ array1 shape: (3,)
 2     3
 
 
-[2]
+[2] 
+# 3개의 컬럼명이 필요함
+col_name2 = ['col1', 'col2', 'col3']
+
+# 2행x3열 형태의 리스트와 ndarray를 생성한 후 이를 각각 DataFrame으로 변환
+list2 = [[1,2,3],
+         [11,12,13]]
+array2 = np.array(list2)
+print('array2 shape:', array2.shape)
+df_list2 = pd.DataFrame(list2, columns=col_name2)
+print('2차원 리스트로 만든 DataFrame:\n', df_list2)
+df_array1 = pd.DataFrame(array2, columns=col_name2)
+print('2차원 ndarray로 만든 DataFrame:\n', df_array1)
+
+[2]-A
+array2 shape: (2, 3)
+2차원 리스트로 만든 DataFrame:
+    col1  col2  col3
+0     1     2     3
+1    11    12    13
+2차원 ndarray로 만든 DataFrame:
+    col1  col2  col3
+0     1     2     3
+1    11    12    13
 
 
+[3] #딕셔너리(dict)에서 DataFrame 변환
+# key는 컬럼명으로 매핑, Value는 리스트 형(또는 ndarray)
+dict = {'col1':[1,11], 'col2':[2,22], 'col3':[3,33]}
+df_dict = pd.DataFrame(dict)
+print('딕셔너리로 만든 DataFrame:\n', df_dict)
+
+[3]-A
+딕셔너리로 만든 DataFrame:
+    col1  col2  col3
+0     1     2     3
+1    11    22    33
+
+
+[4]
 
 
 
