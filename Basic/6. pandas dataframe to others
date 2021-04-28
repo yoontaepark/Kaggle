@@ -113,7 +113,20 @@ print('딕셔너리로 만든 DataFrame:\n', df_dict)
 1    11    22    33
 
 
-[4]
+[4] #DataFrame을 ndarray로 변환
+#DataFrame을 ndarray로 변환, dataframe.values를 넣으면 된다
+array3 = df_dict.values
+print('df_dict.values 타입:', type(array3), 'df_dict.values shape:', array3.shape)
+print(array3)
+
+[4]-A
+df_dict.values 타입: <class 'numpy.ndarray'> df_dict.values shape: (2, 3)
+[[ 1  2  3]
+ [11 22 33]]
+ 
+ 
+[5]
+ 
 
 
 
