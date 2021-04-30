@@ -184,6 +184,8 @@ titanic_df.head(3)
 2	3	1	3	Heikkinen, Miss. Laina	female	26.0	0	0	STON/O2. 3101282	7.9250	NaN	S	0	360.0	1
 
 
+[9] #DataFrame 데이터 삭제, 그 중 axis에 따른 삭제. axis=0 이 default이므로 보통 열을 지우려면 axis=1도 추가 지정해둬야 함
+
 
 
 
