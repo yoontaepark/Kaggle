@@ -203,6 +203,19 @@ titanic_df.head(3)
 2	3	1	3	Heikkinen, Miss. Laina	female	26.0	0	0	STON/O2. 3101282	7.9250	NaN	S	0	360.0	1
 
 
+[10] #여러개의 컬럼 삭제는 삭제 컬럼들을 리스트로 입력하면 됨. inplace=True인 경우 원함수가 삭제되고, 반환시키면 값은 none이 나옴
+drop_result = titanic_df.drop(['Age_0', 'Age_by_10', 'Family_No'], axis=1, inplace=True)
+print('inplace=True로 drop 후 반환된 값', drop_result)
+titanic_df.head(3)
+
+[10]-A
+inplace=True로 drop 후 반환된 값 None
+PassengerId	Survived	Pclass	Name	Sex	Age	SibSp	Parch	Ticket	Fare	Cabin	Embarked
+0	1	0	3	Braund, Mr. Owen Harris	male	22.0	1	0	A/5 21171	7.2500	NaN	S
+1	2	1	1	Cumings, Mrs. John Bradley (Florence Briggs Th...	female	38.0	1	0	PC 17599	71.2833	C85	C
+2	3	1	3	Heikkinen, Miss. Laina	female	26.0	0	0	STON/O2. 3101282	7.9250	NaN	S
+
+
 
 
 
