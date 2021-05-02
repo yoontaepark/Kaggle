@@ -117,8 +117,53 @@ Pclass
 3	491	491
 
 
-[7]
+[7] # groupby의 index화할 대상 값만 보고 싶을수도 있음
+titanic_df.groupby('Pclass')['Pclass'].count()
+↓
+Pclass
+1    216
+2    184
+3    491
+Name: Pclass, dtype: int64
+
+[7-2] #groupby를 굳이 안쓰고 value_counts() 함수를 써도 된다
+titanic_df['Pclass'].value_counts()
+↓
+3    491
+1    216
+2    184
+Name: Pclass, dtype: int64
+
+[8] # groupby하고나서 여러개의 산식을 쓰고 싶을때(그러니까 여러개의 aggregation 함수를 적용하고 싶을 때)
+# .agg([max, min]) 이런식으로 함수쓰면 된다
+# 컬럼과 .agg순서에 따라 표현하고 싶은거 표현가능
+
+titanic_df.groupby('Pclass')['Age'].agg([max,min,sum])
+↓
+max	min	sum
+Pclass			
+1	80.0	0.92	7111.42
+2	70.0	0.67	5168.83
+3	74.0	0.42	8924.92
+
+[8-2] #다중컬럼이나 aggregation함수는 동일할때는 컬럼을 리스트로 만들어서 넣어주면 된다. 
+titanic_df.groupby('Pclass')[['Age','Fare']].agg([max,min,sum])
+↓
+	Age	Fare
+max	min	sum	max	min	sum
+Pclass						
+1	80.0	0.92	7111.42	512.3292	0.0	18177.4125
+2	70.0	0.67	5168.83	73.5000	0.0	3801.8417
+3	74.0	0.42	8924.92	69.5500	0.0	6714.6951
 
 
-
-
+[9] # 복잡한 형태로, 컬럼마다 다른 aggregation 함수를 적용하고 싶을때
+# 딕셔너리 만든다음에 .agg()안에다가 넣는다
+agg_format = {'Age':'max', 'SibSp':'min', 'Fare':'mean'}
+titanic_df.groupby('Pclass').agg(agg_format)
+↓
+	Age	SibSp	Fare
+Pclass			
+1	80.0	0	84.154687
+2	70.0	0	20.662183
+3	74.0	0	13.675550
